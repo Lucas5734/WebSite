@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric Brunet Plomberie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRE DE NAVIGATION -->
+    <header>
+        <a href="#accueil" class="logo">
+            <img src="img/img-3.png" alt="Logo Eric Brunet Plomberie">
+        </a>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#information">Information</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section id="accueil" class="section">
+            <h1>Bienvenue chez Eric Brunet Plomberie</h1>
+            <p>Dépannage, installation sanitaire et chauffage.</p>
+            <img class="img-7" src="img/img-7.webp" alt="Plomberie">
+        </section>
+
+        <section id="information" class="section">
+            <h2>Nos Services & Informations</h2>
+            <p>Fuite d'eau, débouchage, installation de chauffe-eau, rénovation de salle de bain.</p>
+            <div class="carousel">
+                <button class="carousel-btn" onclick="changerSlide(-1)">&#8592;</button>
+                <div class="carousel-track">
+                    <img class="carousel-img active" src="img/img-4.jpg" alt="Réalisation 1">
+                    <img class="carousel-img" src="img/img-5.jpg" alt="Réalisation 2">
+                </div>
+                <button class="carousel-btn" onclick="changerSlide(1)">&#8594;</button>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contactez-nous</h2>
+            <div class="contact-buttons">
+                <a href="tel:+33638330158" class="btn-contact">
+                    📱 06.38.33.01.58
+                </a>
+                <a href="mailto:ebp2015@orange.fr" class="btn-contact">
+                    ✉️ ebp2015@orange.fr
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let currentSlide = 0;
+        function changerSlide(direction) {
+            const imgs = document.querySelectorAll('.carousel-img');
+            imgs[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + imgs.length) % imgs.length;
+            imgs[currentSlide].classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
